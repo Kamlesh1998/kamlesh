@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        span{
+            color:red;
+        }
+    </style>
+
+    <script>
+        function check_fname(){
+
+            var f = document.frm.fname.value;
+            var reg = /^[A-Za-z]+$/;
+            if(f.trim()==""){
+                document.getElementById("tops").innerHTML="Please Enter your firstname";
+            }else if(!reg.test(f)){
+                document.getElementById("tops").innerHTML="Please enter only Alphabet";
+            }else{
+                document.getElementById("tops").innerHTML="";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="" method="post" name="frm">
+        <table>
+            <tr>
+                <td>
+                    First Name :
+                </td>
+                <td>
+                    <input type="text" name="fname" onblur="check_fname();">
+                    <span id="tops"></span>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
